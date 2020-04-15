@@ -1,0 +1,36 @@
+$fontSize: 17px;
+$lineHeight: 1.5883;
+$spacer: 27px;                                                    $sp: $spacer;
+$fontFamily: 'ObjectSans', Helvetica, Arial, sans-serif;          $ff: $fontFamily;
+
+
+$duration: 0.15s;                                                 $d: $duration;
+$function: ease-out;                                              $f: $function;
+$function-reverse: cubic-bezier(0.2, 0.0, 0.4, 1);                $fr: $function-reverse;
+
+
+$primary: #93B911;                                                $p: $primary;
+$secondary: #6E6E6E;                                              $s: $secondary;
+$tertiary: #F7F7F7;                                               $t: $tertiary;
+
+
+$text: #494949;                                                   $txt: $text;
+$link: #93B911;                                                   $l: $link;
+$link-hover: #548601;                                             $lh: $link-hover;
+
+
+$white: #ffffff;                                                  $w: $white;
+$black: #000000;                                                  $b: $black;
+$dark-gray: #494949;                                              $dgr: $dark-gray;
+$gray: #6E6E6E;                                                   $gr: $gray;
+$light-gray: #DFDFDF;                                             $lgr: $light-gray;
+$green: #548601;                                                  $gn: $green;
+$red: #E87D76;                                                    $r: $red;
+$transparent: transparent;                                        $tr: $transparent;
+
+
+$default: #f00;
+$success: #93B911;
+$info: #0079e8;
+$warning: #f0ad4e;
+$error: #E87D76;

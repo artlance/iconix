@@ -1,0 +1,32 @@
+/* grid */
+.main-global {
+    min-height: 100%;
+    overflow: hidden;
+}
+.container {
+    max-width: 1380px;
+    padding-left: 100px;
+    padding-right: 100px;
+    margin: 0 auto;
+}
+.svg-fill {
+    transition: fill $d $f;
+    will-change: fill;
+}
+.svg-stroke {
+    transition: stroke $d $f;
+    will-change: stroke;
+}
+.no-js {
+    .slider-block,
+    .about-projects-slider,
+    .project-tasks-slider,
+    .project-gallery-slider {
+        .slider-item {
+            display: none;
+            &:first-child {
+                display: block;
+            }
+        }
+    }
+}
