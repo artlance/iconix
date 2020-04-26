@@ -38,8 +38,7 @@ $(document).ready(function() {
         pauseOnDotsHover: false,
         slide: '.slider-item',
         slidesToShow: 1,
-        slidesToScroll: 1,
-        fade: true
+        slidesToScroll: 1
     });
 
     //------------------------------------------------------------------------//
@@ -71,6 +70,15 @@ $(document).ready(function() {
 
     //input label
     var inputFields = $('.input-wrapper .input-text, .input-wrapper .textarea');
+
+    inputFields.each(function(index, el) {
+        if ( $(el).val() != '' ) {
+            $(this).parents('.input-wrapper').addClass('active');
+            if ( $(el).hasClass('textarea') ) {
+                $(this).height(0).height(this.scrollHeight);
+            }
+        }
+    });
 
     inputFields.on('keydown keyup', function(event) {
         var thisElement = $(this),
@@ -130,6 +138,13 @@ $(document).ready(function() {
         thisFilesArr = thisFilesArr.toString().replace(/,/g, ', ');
 
         thisParent.find('.feedback-file-value').text(thisFilesArr);
+    });
+
+    $('#feedback-file').on('dragenter dragover', function(event) {
+        $(this).parents('.input-wrapper').addClass('dragover');
+    });
+    $('#feedback-file').on('dragleave change drop', function(event) {
+        $(this).parents('.input-wrapper').removeClass('dragover');
     });
 
     //------------------------------------------------------------------------//
@@ -209,22 +224,23 @@ $(document).ready(function() {
 
     //------------------------------------------------------------------------//
 
+    //animation
     $('.test').waypoint(function(direction) {
         $(this.element).addClass('animated275').addClass('fadeInDown').addClass('visibility-visible');
     }, {
-        offset: "80%"
+        offset: "90%"
     });
 
     $('.header-caption h1 > span, .caption-number, .caption-title, .advantages-slider, .about-achievement, .about-advantage, .about-projects-title, .about-project, .client-screens, .client-description, .clients-more, .feedback-form, .feedback-contact, .jobs-caption, .jobs-list li, .vacancy-info-block, .vacancy-back, .vacancy-caption, .vacancy-city, .vacancy-decription > *, .vacancy-conditions-title, .vacancy-conditions-col, .feedback-caption, .project-hero-back, .project-hero-text h1, .project-hero-text p, .project-feature, .project-goal, .project-description-text > *, .project-comment-person, .project-comment-text, .project-tasks-caption, .project-task, .project-gallery-caption, .project-result-item, .project-result-caption, .project-result-info > *, .feedback-success-icon, .feedback-success-title, .feedback-success-block > p').waypoint(function(direction) {
         $(this.element).addClass('animated275').addClass('fadeInUp').addClass('visibility-visible');
     }, {
-        offset: "80%"
+        offset: "90%"
     });
 
     $('.logo, .menu, .header-phone, .project-gallery-slider').waypoint(function(direction) {
         $(this.element).addClass('animated275').addClass('fadeIn').addClass('visibility-visible');
     }, {
-        offset: "80%"
+        offset: "90%"
     });
 
     $('.footer-global').waypoint(function(direction) {
@@ -232,5 +248,7 @@ $(document).ready(function() {
     }, {
         offset: "100%"
     });
+
+    //------------------------------------------------------------------------//
 
 }); //document ready

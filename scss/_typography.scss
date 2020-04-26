@@ -14,14 +14,26 @@ a {
 }
 .wysiwyg {
     h1 {
+        font-size: 60px;
+        line-height: 1.1667;
+        font-weight: 800;
+        color: $b;
         margin-top: $spacer;
         margin-bottom: $spacer;
     }
     h2 {
+        font-size: 20px;
+        line-height: 1.5;
+        font-weight: 800;
+        color: $b;
         margin-top: $spacer;
         margin-bottom: $spacer;
     }
     h3 {
+        font-size: 15px;
+        line-height: 1.6667;
+        font-weight: 800;
+        color: $b;
         margin-top: $spacer;
         margin-bottom: $spacer;
     }
@@ -79,34 +91,76 @@ a {
         }
     }
     ul {
-        overflow: hidden;
-        margin-top: $spacer;
-        margin-bottom: $spacer;
-        list-style: inside disc;
+        display: block;
+        margin: $spacer 0;
+        padding: 0;
+        list-style: none;
         li {
-            padding-left: $spacer;
+            font-size: 15px;
+            line-height: 1.6667;
+            margin-bottom: 25px;
+            padding-left: 31px;
+            position: relative;
+            &:before {
+                content: "";
+                position: absolute;
+                top: 8px;
+                left: 0;
+                width: 6px;
+                height: 6px;
+                background: $p;
+                border-radius: 50%;
+            }
         }
     }
     ol {
-        overflow: hidden;
-        margin-top: $spacer;
-        margin-bottom: $spacer;
+        display: block;
+        margin: $spacer 0;
+        padding: 0;
         list-style: inside decimal;
         li {
-            padding-left: $spacer;
+            font-size: 15px;
+            line-height: 1.6667;
+            margin-bottom: 25px;
         }
     }
     table {
+        width: 100%;
         margin-top: $spacer;
         margin-bottom: $spacer;
         th {
-            padding: $spacer/2 $spacer;
-            background: $light-gray;
-            border: 1px solid $light-gray;
+            font-size: 14px;
+            line-height: 1.7143;
+            font-weight: 800;
+            color: $w;
+            text-align: right;
+            padding: 15px 30px 13px 0;
+            background: $gray;
+            border: 0;
+            &:first-child {
+                text-align: left;
+                padding-left: 30px;
+            }
         }
         td {
-            padding: $spacer/2 $spacer;
-            border: 1px solid $light-gray;
+            font-size: 15px;
+            line-height: 1.6667;
+            text-align: right;
+            padding: 20px 30px 20px 0;
+            border: 0;
+            &:first-child {
+                text-align: left;
+                padding-left: 30px;
+            }
+        }
+        tbody {
+            tr {
+                &:nth-child(even) {
+                    td {
+                        background: $t;
+                    }
+                }
+            }
         }
     }
 }
