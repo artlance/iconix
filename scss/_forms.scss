@@ -343,3 +343,52 @@ button.button {
         transform: rotate(360deg);
     }
 }
+.feedback-file-list {
+    padding-top: 4px;
+}
+.feedback-file-item {
+    margin-top: 6px;
+    padding: 10px 44px 10px 17px;
+    position: relative;
+    color: $w;
+    background: #7c7c7c;
+    border-radius: 3px;
+}
+.feedback-file-title {
+    font-size: 15px;
+    line-height: 1.6;
+    strong {
+        line-height: normal;
+    }
+}
+.feedback-file-delete {
+    display: block;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    width: 44px;
+    &::before,
+    &::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        margin-top: -1px;
+        left: 14px;
+        right: 14px;
+        height: 2px;
+        background: $w;
+        transform: rotate(45deg);
+        transition: background-color $d $f;
+        will-change: background-color;
+    }
+    &::after {
+        transform: rotate(-45deg);
+    }
+    &:hover {
+        &::before,
+        &::after {
+            background-color: $p;
+        }
+    }
+}
